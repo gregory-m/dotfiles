@@ -1,0 +1,14 @@
+{
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"theme": "Soda Light 3.sublime-theme",
+	"color_scheme": "Packages/RailsCasts Colour Scheme/RailsCastsColorScheme.tmTheme",
+	"font_size": 13,
+	"trim_automatic_white_space": true,
+    "trim_trailing_white_space_on_save": true,
+    "ensure_newline_at_eof_on_save": true,
+    "remember_open_files": false,
+
+}
