@@ -1,0 +1,16 @@
+[user]
+	email = man.gregory@gmail.com
+	name = Gregory Man
+[push]
+	default = simple
+[credential]
+	helper = osxkeychain
+[alias]
+	st = status
+	pr = pull --rebase
+	co = checkout
+[color]
+	ui = true
+	interactive = auto
+[core]
+	excludesfile = ~/.gitignore
