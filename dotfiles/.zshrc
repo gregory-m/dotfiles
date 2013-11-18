@@ -45,7 +45,8 @@ plugins=(autojump brew bundler gem git osx rails4 rake rvm ruby sublime urltools
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin
+export PATH=$PATH:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
+export EDITOR='sublime -w'
