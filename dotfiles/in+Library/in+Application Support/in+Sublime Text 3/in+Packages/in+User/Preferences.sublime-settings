@@ -9,6 +9,7 @@
 	"trim_automatic_white_space": true,
     "trim_trailing_white_space_on_save": true,
     "ensure_newline_at_eof_on_save": true,
-    "remember_open_files": false,
+    "hot_exit": false,
+    "remember_open_files": false
 
 }

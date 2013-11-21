@@ -40,7 +40,7 @@ ZSH_THEME="my"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(autojump brew bundler gem git osx rails4 rake rvm ruby sublime urltools)
+plugins=(autojump brew bundler gem git osx rails4 rake rvm ruby urltools)
 
 
 # Customize to your needs...
@@ -48,7 +48,11 @@ export PATH=$PATH:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-export EDITOR='sublime -w'
+
+alias st="subl -n $@"
+alias stt="st -n ."
+
+export EDITOR='subl -w -n'
 
 export LC_ALL="en_US.UTF-8"
 
