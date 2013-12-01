@@ -1,0 +1,3 @@
+[
+	{ "keys": ["super+m"], "command": "markdown_preview", "args": {"target": "browser", "parser":"github"} },
+]

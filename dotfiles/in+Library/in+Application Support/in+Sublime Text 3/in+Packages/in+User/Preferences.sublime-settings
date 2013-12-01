@@ -1,15 +1,14 @@
 {
+	"color_scheme": "Packages/RailsCasts Colour Scheme/RailsCastsColorScheme.tmTheme",
+	"ensure_newline_at_eof_on_save": true,
+	"font_size": 13,
+	"hot_exit": false,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
+	"remember_open_files": false,
 	"theme": "Soda Light 3.sublime-theme",
-	"color_scheme": "Packages/RailsCasts Colour Scheme/RailsCastsColorScheme.tmTheme",
-	"font_size": 13,
 	"trim_automatic_white_space": true,
-    "trim_trailing_white_space_on_save": true,
-    "ensure_newline_at_eof_on_save": true,
-    "hot_exit": false,
-    "remember_open_files": false
-
+	"trim_trailing_white_space_on_save": true
 }
