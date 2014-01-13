@@ -52,6 +52,11 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 alias st="subl -n $@"
 alias stt="st -n ."
 
+swk() {
+  rm -f ~/.chef/knife.rb
+  cp ~/.chef/knife.rb."$*" ~/.chef/knife.rb
+}
+
 export EDITOR='subl -w -n'
 
 export LC_ALL="en_US.UTF-8"
