@@ -10,5 +10,7 @@
 	"remember_open_files": false,
 	"theme": "Soda Light 3.sublime-theme",
 	"trim_automatic_white_space": true,
-	"trim_trailing_white_space_on_save": true
+	"trim_trailing_white_space_on_save": true,
+	"tab_size": 2,
+	"translate_tabs_to_spaces": true,
 }
