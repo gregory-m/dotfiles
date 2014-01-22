@@ -52,10 +52,20 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 alias st="subl -n $@"
 alias stt="st -n ."
 alias gti="git $@"
+alias r="rails"
 
 swk() {
   rm -f ~/.chef/knife.rb
   cp ~/.chef/knife.rb."$*" ~/.chef/knife.rb
+}
+
+_chef_status() {
+  if [[ `cat ~/.chef/knife.rb | grep chef_server_url` == *stage* ]]
+  then
+    echo "staging";
+  else
+    echo "produrction";
+  fi
 }
 
 export EDITOR='subl -w -n'

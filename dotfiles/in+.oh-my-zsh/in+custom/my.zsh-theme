@@ -13,7 +13,9 @@ else
 fi
 local git_branch='$(git_prompt_info)%{$reset_color%}'
 
-PROMPT="${user_host} ${current_dir} ${rvm_ruby} ${git_branch}
+chef_server='%{$fg[blue]%}[$(_chef_status)]%{$reset_color%}'
+
+PROMPT="${user_host} ${current_dir} ${rvm_ruby} ${git_branch} ${chef_server}
 ⇢ %B$%b "
 RPS1="${return_code}"
 
