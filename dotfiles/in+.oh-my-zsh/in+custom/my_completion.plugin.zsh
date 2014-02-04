@@ -15,3 +15,5 @@ hosts=(
   localhost
 )
 zstyle ':completion:*:hosts' hosts $hosts
+
+zstyle ':completion:*:*:*:*' ignored-patterns GREP_COLOR GREP_OPTIONS
