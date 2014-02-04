@@ -40,7 +40,7 @@ ZSH_THEME="my"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(autojump brew bundler gem git osx rails rake rvm ruby urltools knife vagrant)
+plugins=(autojump brew bundler gem git osx rails rake rvm ruby urltools knife vagrant my_completion)
 
 
 # Customize to your needs...
