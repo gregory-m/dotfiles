@@ -40,14 +40,17 @@ ZSH_THEME="my"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(autojump brew bundler gem git osx rails rake rvm ruby urltools knife vagrant my_completion)
+plugins=(autojump brew bundler gem git osx rails rake rvm ruby urltools knife vagrant my_completion docker)
 
 
 # Customize to your needs...
-export PATH=$PATH:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
+bindkey -e
+bindkey '^[[1;9C' forward-word
+bindkey '^[[1;9D' backward-word
 
 alias st="subl -n $@"
 alias stt="st -n ."
@@ -59,17 +62,44 @@ swk() {
   cp ~/.chef/knife.rb."$*" ~/.chef/knife.rb
 }
 
+swkn() {
+        test $# != 1 && echo "Must pass chef location arg." && return 1
+        if [ -d .chef ]; then
+                if [ -f .chef/knife-$1.rb ]; then
+                        test -L .chef/knife.rb && rm -f .chef/knife.rb
+                        ln -s $(pwd)/.chef/knife-$1.rb .chef/knife.rb
+                else
+                        echo -e "\e[31mknife-${1}.rb does not exist.\e[0m"
+                fi
+        else
+                echo -e "\e[31m.chef directory does not exist in the current working directory\e[0m"
+        fi
+}
+
 _chef_status() {
   if [[ `cat ~/.chef/knife.rb | grep chef_server_url` == *stage* ]]
   then
     echo "staging";
   else
-    echo "produrction";
+    echo "production";
   fi
+}
+
+kb() {
+  knife bootstrap $1 -N $1 -E production_$2 --secret-file .chef/data_bag_secret;
+}
+
+curlo() {
+  curl -sS -v -o /dev/null $1;
 }
 
 export EDITOR='subl -w -n'
 
 export LC_ALL="en_US.UTF-8"
+
+if [[ `boot2docker status` == running ]]
+then
+  $(boot2docker shellinit);
+fi
 
 source $ZSH/oh-my-zsh.sh
