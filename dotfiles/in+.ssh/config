@@ -1,6 +1,0 @@
-ServerAliveInterval 10
-Host git.wixpress.com
-Port 22
-Host *.wixpress.com *.dev.wix
-User root
-Port 41278
