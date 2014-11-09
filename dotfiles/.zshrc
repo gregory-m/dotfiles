@@ -93,13 +93,35 @@ curlo() {
   curl -sS -v -o /dev/null $1;
 }
 
+purge_all_docker() {
+  # Delete all containers
+  docker rm $(docker ps -a -q);
+  # Delete all images
+  docker rmi $(docker images -q);
+}
+
+clean_docker () {
+  docker rm $(docker ps -aq)
+  docker rmi $(docker images --filter dangling=true --quiet)
+}
+
+run_bash_docker() {
+  docker run -ti --rm $1 /bin/bash;
+}
+
+exec_bash_docker() {
+  docker exec -ti $1 /bin/bash;
+}
+
 export EDITOR='subl -w -n'
 
 export LC_ALL="en_US.UTF-8"
 
 if [[ `boot2docker status` == running ]]
 then
-  $(boot2docker shellinit);
+  `boot2docker shellinit 2>/dev/null`;
 fi
+
+zstyle ':completion:*:*:*:*:*' ignored-patterns 'DOCKER_HOST|DOCKER_CERT_PATH|DOCKER_TLS_VERIFY|LSCOLORS|GREP_COLOR|GREP_OPTIONS|HISTFILE|HISTCHARS|HISTSIZE'
 
 source $ZSH/oh-my-zsh.sh
